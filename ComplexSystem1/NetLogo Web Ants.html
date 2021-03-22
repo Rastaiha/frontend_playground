@@ -1,0 +1,568 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <!-- base href="http://www.netlogoweb.org/web?http://www.netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Ants.nlogo" -->
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/1623ab0774d4d8dd3cca2f42deb63dea-codemirror.css">
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/c89dce10b44d2882a024e7befc2b63f5-dialog.css">
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/49647712414ff96d5846de9736b5dbd3-show-hint.css">
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/d7ca5ca9441ef9e10f9ea5d90002690a-chosen.css">
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/7ea85f262abd7ce1b1ef68f3c571d233-classes.css">
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/2fc07460d1ddbe6c7b7b7f34790a94ef-widgets.css">
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/3f9b9da73233495ff719882e0312a3b2-ui-editor.css">
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/2606ba6ddf802ff01ccd6a2aaace04af-netlogoweb.css">
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/7944911f182cddcdf77a1f498d2a9d7f-netlogo-syntax.css">
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/5160381733c242aa806b21a6b7f14cab-spinner.css">
+    <link rel="stylesheet" href="NetLogo%20Web%20Ants_files/79009b4cd1b76dd358b9b16fa2c347c4-alert.css">
+    <title>NetLogo Web: Ants</title>
+  </head>
+  <body style="margin: 0px;" cz-shortcut-listen="true">
+    <script>
+      window.exports = {};
+    </script>
+    <div class="dark-overlay" id="loading-overlay" style="display: none;">
+      <div id="spinner">
+
+        <svg class="spinner-img turtle1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 55">
+          <polygon points="22,0 0,49 22,40 44,49" style="fill: rgba(255, 255, 255, 0.125);" transform="rotate(45.0, 22, 24)"></polygon>
+        </svg>
+
+        <svg class="spinner-img turtle2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 55">
+          <polygon points="22,0 0,49 22,40 44,49" style="fill: rgba(255, 255, 255, 0.25);" transform="rotate(90.0, 22, 24)"></polygon>
+        </svg>
+
+        <svg class="spinner-img turtle3" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 55">
+          <polygon points="22,0 0,49 22,40 44,49" style="fill: rgba(255, 255, 255, 0.375);" transform="rotate(135.0, 22, 24)"></polygon>
+        </svg>
+
+        <svg class="spinner-img turtle4" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 55">
+          <polygon points="22,0 0,49 22,40 44,49" style="fill: rgba(255, 255, 255, 0.5);" transform="rotate(180.0, 22, 24)"></polygon>
+        </svg>
+
+        <svg class="spinner-img turtle5" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 55">
+          <polygon points="22,0 0,49 22,40 44,49" style="fill: rgba(255, 255, 255, 0.625);" transform="rotate(225.0, 22, 24)"></polygon>
+        </svg>
+
+        <svg class="spinner-img turtle6" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 55">
+          <polygon points="22,0 0,49 22,40 44,49" style="fill: rgba(255, 255, 255, 0.75);" transform="rotate(270.0, 22, 24)"></polygon>
+        </svg>
+
+        <svg class="spinner-img turtle7" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 55">
+          <polygon points="22,0 0,49 22,40 44,49" style="fill: rgba(255, 255, 255, 0.875);" transform="rotate(315.0, 22, 24)"></polygon>
+        </svg>
+
+        <svg class="spinner-img turtle8" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 55">
+          <polygon points="22,0 0,49 22,40 44,49" style="fill: rgba(255, 255, 255, 1.0);" transform="rotate(360.0, 22, 24)"></polygon>
+        </svg>
+
+      </div>
+    </div>
+
+    <div class="dark-overlay" id="alert-overlay" style="display : none ;">
+      <div id="alert-dialog">
+        <h3 id="alert-title">Error</h3>
+
+        <div id="alert-message" class="alert-text">
+            NetLogo Web has encountered a problem.
+        </div>
+        <div class="alert-text standalone-text">
+            It looks like you're using NetLogo Web in standalone mode.
+            <br>
+            If the above error is being caused by an unimplemented primitive, we recommend a quick visit to
+                <a href="https://netlogoweb.org/" target="_blank">NetLogoWeb.org</a>
+                to see if the primitive has been implemented in the most up-to-date version.
+        </div>
+        <div id="alert-dismiss-container">
+          <button id="alert-dismiss" class="alert-button alert-separator-top" onclick="window.nlwAlerter.hide()">
+                Dismiss
+            </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="netlogo-model-container" style="display: inline-block;">
+      <div tabindex="1" class="netlogo-model netlogo-display-vertical" style="min-width: 754px;">
+        <div class="modal-overlay" id="modal-overlay" style="display: none;"></div>
+        <div class="netlogo-display-vertical">
+          <div class="netlogo-header">
+            <div class="netlogo-subheader">
+              <div class="netlogo-powered-by">
+                <a href="http://ccl.northwestern.edu/netlogo/"><img style="vertical-align: middle;" alt="NetLogo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAANcSURBVHjarJRdaFxFFMd/M/dj7252uxubKms+bGprVyIVbNMWWqkQqtLUSpQWfSiV+oVFTcE3DeiDgvoiUSiCYLH2oVoLtQ+iaaIWWtE2FKGkkSrkq5svN+sm7ma/7p3x4W42lEbjQw8MM8yc87/nzPnNFVprbqWJXyMyXuMqx1Ni6N3ny3cX8tOHNLoBUMvESoFI2Xbs4zeO1lzREpSrMSNS1zkBDv6uo1/noz1H7mpvS4SjprAl2AZYEqzKbEowBAgBAkjPKX2599JjT7R0bj412D0JYNplPSBD1G2SmR/e6u1ikEHG2vYiGxoJmxAyIGSCI8GpCItKimtvl2JtfGujDNkX6epuAhCjNeAZxM1ocPy2Qh4toGQ5DLU+ysiuA2S3P0KgJkjAgEAlQylAA64CG/jlUk6//ng4cNWmLK0yOPNMnG99Rs9LQINVKrD+wmke7upg55PrWP3eYcwrlykpKCkoelDy/HVegQhoABNAepbACwjOt72gZkJhypX70YDWEEklue+rbnYc2MiGp1upPfYReiJJUUG58gFXu4udch1wHcjFIgy0HyIjb2yvBpT2F6t+6+f+D15lW8c9JDo7iPSdgVIRLUqL2AyHDQAOf9hfbqxvMF98eT3RuTS1avHyl+Stcphe2chP9+4k/t3RbXVl3W+Ws17FY56/w3VcbO/koS/eZLoAqrQMxADZMTYOfwpwoWjL4+bCYcgssMqGOzPD6CIkZ/3SxTJ0ayFIN6/BnBrZb2XdE1JUgkJWkfrUNRJnPyc16zsbgPyXIUJBpvc+y89nk/S8/4nek3NPGeBWMwzGvhUPnP6RubRLwfODlqqx3LSCyee2MnlwMwA2RwgO5qouVcHmksUdJweYyi8hZkrUjgT5t/ejNq0jBsSqNWsKyT9uFtxw7Bs585d3g46KOeT2bWHmtd14KyP+5mzqpsYU3OyioACMhGiqPTMocsrHId9cy9BLDzKxq8X3ctMwlV6yKSHL4fr4dd0DeQBTBUgUkvpE1kVPbqkX117ZzuSaFf4zyfz5n9A4lk0yNU7vyb7jTy1kmFGipejKvh6h9n0W995ZPTu227hqmCz33xXgFV1v9NzI96NfjndWt7XWCB/7BSICFWL+j3lAofpCtfYFb6X9MwCJZ07mUsXRGwAAAABJRU5ErkJggg==">
+                  <span style="font-size: 16px;">powered by NetLogo</span></a>
+              </div>
+            </div>
+            <div class="netlogo-model-masthead">
+              <div style="justify-content: center; height: 30px; line-height: 30px;" class="flex-row">
+                <h2 id="netlogo-title" class="netlogo-widget netlogo-model-title">Ants</h2>
+              </div>
+            </div>
+            <div style="align-items: flex-end; user-select: none;" class="flex-column">
+              <div class="netlogo-export-wrapper">
+                <span style="margin-right: 4px;">File:</span>
+                <button class="netlogo-ugly-button">New</button>
+              </div>
+              <div class="netlogo-export-wrapper">
+                <span style="margin-right: 4px;">Export:</span>
+                <button class="netlogo-ugly-button">NetLogo</button>
+                <button class="netlogo-ugly-button">HTML</button>
+              </div>
+            </div>
+          </div>
+          <div class="netlogo-display-horizontal">
+            <div id="authoring-lock" class="netlogo-toggle-container enabled">
+              <div class="netlogo-interface-unlocker"></div>
+              <div style="width: 5px;"></div>
+              <span class="netlogo-toggle-text">Mode: Interactive</span></div>
+            <div id="tabs-position" class="netlogo-toggle-container enabled">
+              <div class="netlogo-model-orientation vertical-display"></div>
+              <div style="width: 5px;"></div>
+              <span class="netlogo-toggle-text">Commands and Code: Bottom</span></div>
+          </div>
+          <div class="async-popup" id="async-user-dialog" draggable="true" tabindex="0" style="display: none; top: 0px; left: 0px; max-width: 301.6px;">
+            <div class="widget-edit-closer" id="-closer">X</div>
+            <div class="async-dialog-message"></div>
+            <div class="async-dialog-controls" id="async-dialog-controls"> Invalid dialog state.</div>
+          </div>
+          <div class="help-popup" id="help-dialog" tabindex="0" style="display: none; top: 200.7px; left: 75.4px; width: 603.2px;">
+            <div class="widget-edit-closer" id="-closer">X</div>
+            <div>
+              <table>
+                <table class="help-key-table">
+                  <tr>
+                    <td class="help-keys">
+                      <kbd>ctrl</kbd>
+                      <kbd>shift</kbd>
+                      <kbd>l</kbd>
+                    </td>
+                    <td class="help-explanation">switch to authoring mode</td>
+                  </tr>
+                  <tr>
+                    <td class="help-keys">
+                      <kbd>ctrl</kbd>
+                      <kbd>u</kbd>
+                    </td>
+                    <td class="help-explanation">find all usages of selected text (when in NetLogo Code editor)</td>
+                  </tr>
+                  <tr>
+                    <td class="help-keys">
+                      <kbd>ctrl</kbd>
+                      <kbd>;</kbd>
+                    </td>
+                    <td class="help-explanation">comment/uncomment a line of code (when in NetLogo Code editor)</td>
+                  </tr>
+                </table>
+              </table>
+            </div>
+          </div>
+          <label class="netlogo-speed-slider">
+            <span class="netlogo-label">model speed</span>
+            <input type="range" min="-1" max="1" step="0.01" value="0">
+            <span class="netlogo-label">ticks: </span></label>
+          <div class="netlogo-widget-container" style="position: relative; width: 754px; height: 507px;">
+            <div class="netlogo-widget netlogo-view-container" id="netlogo-view-0" style="position: absolute; left: 257px; top: 10px; width: 497px; height: 497px;">
+              <canvas class="netlogo-canvas unselectable" width="994" height="994" style="width: 497px; height: 497px;"></canvas>
+            </div>
+            <button type="button" class="netlogo-widget netlogo-button netlogo-command" id="netlogo-button-1" style="position: absolute; left: 46px; top: 71px; width: 80px; height: 33px;">
+              <div class="netlogo-button-agent-context"></div>
+              <span class="netlogo-label">setup</span>
+            </button>
+            <label class="netlogo-widget netlogo-slider netlogo-input" id="netlogo-slider-2" style="position: absolute; left: 31px; top: 106px; width: 190px; height: 33px;"><input type="range" max="99" min="0" step="1" value="50">
+              <div class="netlogo-slider-label">
+                <span class="netlogo-label">diffusion-rate</span>
+                <span class="netlogo-slider-value"><input type="number" style="width: 5ch;" min="0" max="99" step="1" value="50">
+                </span>
+              </div>
+            </label>
+            <label class="netlogo-widget netlogo-slider netlogo-input" id="netlogo-slider-3" style="position: absolute; left: 31px; top: 141px; width: 190px; height: 33px;"><input type="range" max="99" min="0" step="1" value="10">
+              <div class="netlogo-slider-label">
+                <span class="netlogo-label">evaporation-rate</span>
+                <span class="netlogo-slider-value"><input type="number" style="width: 5ch;" min="0" max="99" step="1" value="10">
+                </span>
+              </div>
+            </label>
+            <label class="netlogo-widget netlogo-button netlogo-forever-button netlogo-command netlogo-disabled" id="netlogo-button-4" style="position: absolute; left: 136px; top: 71px; width: 75px; height: 33px;">
+              <div class="netlogo-button-agent-context"></div>
+              <span class="netlogo-label">go</span>
+              <input type="checkbox" disabled="disabled" value="on">
+              <div class="netlogo-forever-icon"></div>
+            </label>
+            <label class="netlogo-widget netlogo-slider netlogo-input" id="netlogo-slider-5" style="position: absolute; left: 31px; top: 36px; width: 190px; height: 33px;"><input type="range" max="200" min="0" step="1" value="125">
+              <div class="netlogo-slider-label">
+                <span class="netlogo-label">population</span>
+                <span class="netlogo-slider-value"><input type="number" style="width: 6ch;" min="0" max="200" step="1" value="125">
+                </span>
+              </div>
+            </label>
+            <div class="netlogo-widget netlogo-plot" id="netlogo-plot-6" style="position: absolute; left: 5px; top: 197px; width: 243px; height: 279px; overflow: hidden;" data-highcharts-chart="1">
+              <div id="highcharts-byas24h-2" style="position: relative; overflow: hidden; width: 243px; height: 279px; text-align: left; line-height: normal; z-index: 0; user-select: none; left: 0px; top: 0.93335px;" dir="ltr" class="highcharts-container ">
+                <svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="243" height="279" viewBox="0 0 243 279">
+                  <desc>Created with Highcharts 8.1.2</desc>
+                  <defs>
+                    <clipPath id="highcharts-byas24h-3-">
+                      <rect x="0" y="0" width="160" height="193" fill="none"></rect>
+                    </clipPath>
+                  </defs>
+                  <rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="243" height="279" rx="0" ry="0"></rect>
+                  <rect fill="none" class="highcharts-plot-background" x="68" y="39" width="160" height="193"></rect>
+                  <rect fill="none" class="highcharts-plot-border" data-z-index="1" x="68" y="39" width="160" height="193"></rect>
+                  <g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1">
+                    <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 67.5 39 L 67.5 232" opacity="1"></path>
+                    <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 147.5 39 L 147.5 232" opacity="1"></path>
+                    <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 227.5 39 L 227.5 232" opacity="1"></path>
+                  </g>
+                  <g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1">
+                    <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 68 232.5 L 228 232.5" opacity="1"></path>
+                    <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 68 168.5 L 228 168.5" opacity="1"></path>
+                    <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 68 103.5 L 228 103.5" opacity="1"></path>
+                    <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 68 38.5 L 228 38.5" opacity="1"></path>
+                  </g>
+                  <g class="highcharts-axis highcharts-xaxis" data-z-index="2">
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 67.5 232 L 67.5 242" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 147.5 232 L 147.5 242" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 228.5 232 L 228.5 242" opacity="1"></path>
+                    <text x="148" data-z-index="7" text-anchor="middle" transform="translate(0,0)" class="highcharts-axis-title" style="color:#666666;font-size:10px;fill:#666666;" y="266">
+                      <tspan>time</tspan>
+                    </text>
+                    <path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 68 232.5 L 228 232.5"></path>
+                  </g>
+                  <g class="highcharts-axis highcharts-yaxis" data-z-index="2">
+                    <text x="21" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 21 135.5)" class="highcharts-axis-title" style="color:#666666;font-size:10px;fill:#666666;" y="135.5">
+                      <tspan>food</tspan>
+                    </text>
+                    <path fill="none" class="highcharts-axis-line" data-z-index="7" d="M 68 39 L 68 232"></path>
+                  </g>
+                  <g class="highcharts-series-group" data-z-index="3">
+                    <g class="highcharts-series highcharts-series-0 highcharts-scatter-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(68,39) scale(1 1)" clip-path="url(http://www.netlogoweb.org/web?http://www.netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Ants.nlogo#highcharts-byas24h-3-)"></g>
+                    <g class="highcharts-markers highcharts-series-0 highcharts-scatter-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(68,39) scale(1 1)" clip-path="none"></g>
+                    <g class="highcharts-series highcharts-series-1 highcharts-scatter-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(68,39) scale(1 1)" clip-path="url(http://www.netlogoweb.org/web?http://www.netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Ants.nlogo#highcharts-byas24h-3-)"></g>
+                    <g class="highcharts-markers highcharts-series-1 highcharts-scatter-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(68,39) scale(1 1)" clip-path="none"></g>
+                    <g class="highcharts-series highcharts-series-2 highcharts-scatter-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(68,39) scale(1 1)" clip-path="url(http://www.netlogoweb.org/web?http://www.netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Ants.nlogo#highcharts-byas24h-3-)"></g>
+                    <g class="highcharts-markers highcharts-series-2 highcharts-scatter-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(68,39) scale(1 1)" clip-path="none"></g>
+                  </g>
+                  <g class="highcharts-exporting-group" data-z-index="3">
+                    <g class="highcharts-button highcharts-contextbutton" stroke-linecap="round" transform="translate(204,10)">
+                      <rect fill="#ffffff" class="highcharts-button-box" x="0.5" y="0.5" width="24" height="10" rx="2" ry="2" stroke="none" stroke-width="1"></rect>
+                      <title>Chart context menu</title>
+                      <path fill="#666666" d="M 8 2.5 L 18 2.5 M 8 5.5 L 18 5.5 M 8 8.5 L 18 8.5" class="highcharts-button-symbol" data-z-index="1" stroke="#666666" stroke-width="1"></path>
+                      <text x="0" data-z-index="1" y="12" style="color:#333333;cursor:pointer;font-weight:normal;fill:#333333;"></text>
+                    </g>
+                  </g>
+                  <text x="122" text-anchor="middle" class="highcharts-title" data-z-index="4" style="color:#333333;font-size:12px;fill:#333333;" y="19">
+                    <tspan>Food in each pile</tspan>
+                  </text>
+                  <text x="122" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color:#666666;fill:#666666;" y="38"></text>
+                  <text x="15" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color:#666666;fill:#666666;" y="281"></text>
+                  <g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7">
+                    <text x="68" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="250" opacity="1">0</text>
+                    <text x="148" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="250" opacity="1">25</text>
+                    <text x="223" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="250" opacity="1">50</text>
+                  </g>
+                  <g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7">
+                    <text x="53" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="237" opacity="1">0</text>
+                    <text x="53" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="172" opacity="1">50</text>
+                    <text x="53" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="108" opacity="1">100</text>
+                    <text x="53" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="44" opacity="1">150</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="netlogo-tab-area" style="min-width: 500px; max-width: 754px;">
+          <label class="netlogo-tab"><input id="console-toggle" type="checkbox" value="on">
+            <span class="netlogo-tab-text">Command Center</span></label>
+          <label class="netlogo-tab"><input id="code-tab-toggle" type="checkbox" value="on">
+            <span class="netlogo-tab-text">NetLogo Code</span></label>
+          <label class="netlogo-tab"><input id="info-toggle" type="checkbox" value="on">
+            <span class="netlogo-tab-text">Model Info</span></label>
+        </div>
+        <input id="general-file-input" type="file" style="display: none;" name="general-file" value=""></div>
+    </div>
+    <!-- See Safari workaround comments in `color-input.coffee`.  -JMB January 2019 -->
+    <script src="NetLogo%20Web%20Ants_files/044030aa1f15e5d62f7be6560e762b30-jscolor.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/dc5e7f18c8d36ac1d3d4753a87c98d0a-jquery.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/3e9f1dcb9cc75169765265133fb815a7-chosen.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/0cd1ebc44c182996e7d62f29b28dba9f-FileSaver.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/68b7cef56f40f17b6992d32aa2047066-html-sanitizer-minified.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/f1543dd6ae2ffd2e0ae39f0f975c0e4d-markdown.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/ca067c14a1159f519241b602e95bf45c-mousetrap.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/f546207fcb7089d58b75b3ef57f37bf6-localforage.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/854c52eea1c8666bdc81b6d4f0a46808-highcharts.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/035fe399abbea3cffb702a7851cc5bf3-exporting.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/f7bdee45d43e0527c3645c08c4c4ee40-export-data.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/e70f4bf3ff1e828566a59dbe6a53215f-ractive.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/25279a6528662557eed386877c0836f3-synchrodecoder.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/9872086326e07809f8cd267fbf51dedb-codemirror.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/f2798285cd723a94866088997228accc-comment.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/678f0365b883edd0669a1f8cd30de72d-dialog.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/eed15e8b955aaee880af0c819b38fa25-simple.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/b23aa921bb6f30235bf58d81b53087af-searchcursor.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/1e2c6bec0a25d4e7dea128f048b08931-search.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/f3e95f7c676de1232402ae916c535009-show-hint.js"></script>
+
+    <script src="NetLogo%20Web%20Ants_files/tortoise-compiler.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/netlogo-engine.js"></script>
+
+    <script src="NetLogo%20Web%20Ants_files/1d348ed61678807ede70adbc7c548f41-keywords.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/a7169d88407f4331f47732e2d058d19b-codemirror-mode.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/c5eeddab34a89b8275f6385b874644d1-colors.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/cc4a26cf0eb4e073f0ead8a9b51f5685-default-shapes.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/59e68c6df4902030b1ee31158162fd1c-global-noisy-things.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/15cfad759ab3734d13c3824a2118b935-highcharts.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/c24d44168735c6b6e07bd525210bfbd7-models.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/1ca15aae275b2904789484394235e4a2-new-model.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/555990aacd17085bc684beb97a9ba43c-checkbox.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/c7a2cb01b0f8c577b1f863d7ecf981cc-code-container.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/979c148365d08268981c0b216eba7570-color-input.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/b62e8154d158c130e72ad807027c9799-dropdown.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/025ff6cd81a7d4f77e03ef6f9b0e1166-labeled-input.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/1e6ba455b1d668d8d5585ba2c622df85-font-size.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/f6566f22188af89e7291b341570c293a-print-area.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/66467899342e0cb0f7b5445cfb6eaf34-spacer.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/e60fbb62342f00a96f33be73f4339c27-tick-counter.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/334bde98f1c64521fc8a55286e233545-variable.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/d603ee45a82d192a9f47e44132b810e3-async-user-dialog.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/4cd055a8f2482ffd37bfd8e4ceba8023-context-menu.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/30ce57fb7f7c0b4947ac505a9d55a09e-draggable.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/3d59c4252e357a377807950c22976afc-edit-form.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/1fde2bfbe2f9727d87585e28755a5f97-widget.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/9059bb824f5d3d089cc186b8f53bc273-button.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/9190b29c18a6036163abe04946df6c6b-chooser.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/b2366e4898fcaa8cf7451b2e48fc1430-code-editor.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/3b96f7037612ac18ae21cbf0bc47069b-console.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/c27fc5dc88efdcb11ac7a3191b23b8db-help-dialog.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/d5bdbe28e0e3d61c3fd1523aa8175fcd-info.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/d06c0545c7078d65af53899035159f61-input.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/a7f1908f290c426353b08ac56182b99a-label.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/6b47e39194c151a18493f945ed6fba38-monitor.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/ca2016ecfcaf7e1a6156891b57c2d3a6-output.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/9eac6c58f2db38b0c126bb18ebb6402f-plot.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/a6c92e8f0b6a6c855a3885351f259d09-resizer.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/98789e674894085af6ccacf034cc38df-slider.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/baefa8cc09879c12910cff4decf363bd-switch.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/06a6ab1bf629dba6eb42ad95edd8365b-title.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/6e0ab09543c8eea3bec7c4ea45a158b5-view.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/79adaa2360de1506aa6ff921342bc0b0-draw-shape.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/32d501640c2a11c8fa9a8a87fa07c93d-link-drawer.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/cf4a2945a701f25f1b5832454f9b9604-view-controller.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/51548abaef3f565641120ca5ba28b2d5-config-shims.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/bc9e7c0eeab286402a4dcc7c9f4f4717-event-traffic-control.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/eab5f382f51cab038bb978e8d597e9eb-handle-context-menu.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/891923c4ecfd52f54d440d7aa367299c-handle-widget-selection.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/fd3b5da2961fca64f44c1a0f7a49eabd-initialize-ui.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/748de5ddd0e2e2223988ee2ac2bfd9d4-set-up-widgets.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/6efe10f64bef9a423cd00928d7377151-skeleton.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/ed64980d753b64fb4aa1627a0de150f5-widget-controller.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/ed865d3e9a0bfffcd480ee60a92a8b62-babybehaviorspace.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/3f05bcec67493893996b0c19a5c8594e-session-lite.js"></script>
+    <script src="NetLogo%20Web%20Ants_files/015328f490f3148b049cbbb341c4c9cf-tortoise.js"></script>
+
+    <script type="text/javascript">
+      var jsRoutes = {};
+      (function (_root) {
+        var _nS = function (c, f, b) {
+          var e = c.split(f || "."),
+            g = b || _root,
+            d,
+            a;
+          for (d = 0, a = e.length; d < a; d++) {
+            g = g[e[d]] = g[e[d]] || {}
+          }
+          return g
+        }
+        var _qS = function (items) {
+          var qs = '';
+          for (var i = 0; i < items.length; i++) {
+            if (items[i]) 
+              qs += (
+                qs
+                ? '&'
+                : '') + items[i]
+            };
+          return qs
+            ? ('?' + qs)
+            : ''
+        }
+        var _s = function (p, s) {
+          return p + (
+            (s === true || (s && s.secure))
+            ? 's'
+            : '') + ':\/\/'
+        }
+        var _wA = function (r) {
+          return {
+            ajax: function (c) {
+              c = c || {};
+              c.url = r.url;
+              c.type = r.method;
+              return jQuery.ajax(c)
+            },
+            method: r.method,
+            type: r.method,
+            url: r.url,
+            absoluteURL: function (s) {
+              return _s('http', s) + 'netlogoweb.org' + r.url
+            },
+            webSocketURL: function (s) {
+              return _s('ws', s) + 'netlogoweb.org' + r.url
+            }
+          }
+        }
+        _nS('controllers.Local');
+        _root['controllers']['Local']['standalone'] = function () {
+          return _wA({
+            method: "GET",
+            url: "\/" + "standalone"
+          })
+        };
+      })(jsRoutes)
+    </script>
+
+    <!-- This can be used to insert NetLogo code into this page -->
+    <script type="text/nlogo" id="nlogo-code" data-filename="model.nlogo"></script>
+
+    <script>
+
+      Ractive.DEBUG = false;
+
+      var loadingOverlay = document.getElementById("loading-overlay");
+      var activeContainer = loadingOverlay;
+      var modelContainer = document.querySelector("#netlogo-model-container");
+      var nlogoScript = document.querySelector("#nlogo-code");
+      var standaloneURL = "https://netlogoweb.org/standalone";
+      var pageTitle = function (modelTitle) {
+        if (modelTitle != null && modelTitle != "") {
+          return "NetLogo Web: " + modelTitle;
+        } else {
+          return "NetLogo Web";
+        }
+      };
+      var session;
+      var openSession = function (s) {
+        session = s;
+        document.title = pageTitle(session.modelTitle());
+        activeContainer = modelContainer;
+        session.startLoop();
+      };
+
+      var isStandaloneHTML = false;
+
+      if (nlogoScript.textContent.length > 0) {
+        isStandaloneHTML = true;
+      }
+
+      window.nlwAlerter = new NLWAlerter(document.getElementById("alert-overlay"), isStandaloneHTML);
+
+      var displayError = function (error) {
+        // in the case where we're still loading the model, we have to
+        // post an error that cannot be dismissed, as well as ensuring that
+        // the frame we're in matches the size of the error on display.
+        if (activeContainer === loadingOverlay) {
+          window
+            .nlwAlerter
+            .displayError(error, false);
+          activeContainer = window.nlwAlerter.alertContainer;
+        } else {
+          window
+            .nlwAlerter
+            .displayError(error);
+        }
+      };
+
+      var loadModel = function (nlogo, path) {
+        if (session) {
+          session.teardown();
+        }
+        window
+          .nlwAlerter
+          .hide();
+        activeContainer = loadingOverlay;
+        Tortoise.fromNlogo(nlogo, modelContainer, path, openSession, displayError);
+      };
+
+      if (nlogoScript.textContent.length > 0) {
+        Tortoise.fromNlogo(nlogoScript.textContent, modelContainer, nlogoScript.dataset.filename, openSession, displayError);
+      } else if (window.location.search.length > 0) {
+
+        var query = window
+          .location
+          .search
+          .slice(1);
+        var pairs = query
+          .split(/&(?=\w+=)/)
+          .map(function (x) {
+            return x.split('=');
+          });
+        var paramObj = pairs.reduce(function (acc, pair) {
+          acc[pair[0]] = pair[1];
+          return acc;
+        }, {})
+
+        var url = (paramObj.url !== undefined)
+          ? paramObj.url
+          : query;
+        var modelName = (paramObj.name !== undefined)
+          ? decodeURI(paramObj.name)
+          : undefined;
+
+        Tortoise.fromURL(url, modelName, modelContainer, openSession, displayError);
+
+      } else {
+        loadModel(exports.newModel, "NewModel");
+      }
+
+      window.addEventListener("message", function (e) {
+        if (e.data.type === "nlw-load-model") {
+          loadModel(e.data.nlogo, e.data.path);
+        } else if (e.data.type === "nlw-open-new") {
+          loadModel(exports.newModel, "NewModel");
+        } else if (e.data.type === "nlw-update-model-state") {
+          session
+            .widgetController
+            .setCode(e.data.codeTabContents);
+        } else if (e.data.type === "run-baby-behaviorspace") {
+          var reaction = function (results) {
+            e
+              .source
+              .postMessage({
+                type: "baby-behaviorspace-results",
+                id: e.data.id,
+                data: results
+              }, "*");
+          };
+          session.asyncRunBabyBehaviorSpace(e.data.config, reaction);
+        } else if (e.data.type === "nlw-export-model") {
+          model = session.getNlogo();
+          e
+            .source
+            .postMessage({
+              type: "nlw-export-model-results",
+              id: e.data.id,
+              export: model
+            }, "*");
+        }
+      });
+
+      if (parent !== window) {
+        var width = "",
+          height = "";
+        window.setInterval(function () {
+          if (activeContainer.offsetWidth !== width || activeContainer.offsetHeight !== height || (session !== undefined && document.title != pageTitle(session.modelTitle()))) {
+            if (session !== undefined) {
+              document.title = pageTitle(session.modelTitle());
+            }
+            width = activeContainer.offsetWidth;
+            height = activeContainer.offsetHeight;
+            parent.postMessage({
+              width: activeContainer.offsetWidth,
+              height: activeContainer.offsetHeight,
+              title: document.title,
+              type: "nlw-resize"
+            }, "*");
+          }
+        }, 200);
+      }
+    </script>
+
+  </body>
+</html>
