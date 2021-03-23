@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Rastaiha/Frontend-Playground#readme",
   "dependencies": {
-    "react-graph-network": "^1.0.6"
+    "react-graph-network": "^1.0.6",
+    "svd-js": "^1.1.1"
   }
 }
