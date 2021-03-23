@@ -78,6 +78,4 @@ class GameTheoryMiniGame extends Graph {
   addEdge() {
 
   }
-
-
 }
