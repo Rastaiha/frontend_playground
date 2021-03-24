@@ -1,16 +1,17 @@
 class RecommenderGame {
-    table = [[]];
-    normalizedMatrix = [[]]
-    reducedMatrix = [[]]
 
-    RecommenderGame() {
-        this._initializeTable();
+    table = new Array(10).fill(0).map(() => new Array(10).fill(0));
+    normalizedMatrix  = new Array(10).fill(0).map(() => new Array(10).fill(0));
+    reducedMatrix  = new Array(10).fill(0).map(() => new Array(10).fill(0));
+
+    constructor(table) {
+        this._initializeTable(table);
         this._normalizeMatrix();
         this._reduceMatrixDimension();
     }
 
-    _initializeTable() {
-        //todo
+    _initializeTable(table) {
+        this.table = table;
     }
 
     setTableCellValue(row, column, newValue) {
@@ -23,11 +24,10 @@ class RecommenderGame {
             let j;
             let sumOfSquares = 0;
 
-            for (j = 0; j < this.table[0].length; j++) {
+            for (j = 0; j < this.table[i].length; j++) {
                 sumOfSquares += this.table[i][j] * this.table[i][j];
             }
-
-            for (j = 0; j < this.table[0].length; j++) {
+            for (j = 0; j < this.table[i].length; j++) {
                 this.normalizedMatrix[i][j] = this.table[i][j] / Math.sqrt(sumOfSquares);
             }
         }
@@ -43,7 +43,7 @@ class RecommenderGame {
 }
 
 
-const a = [
+var a = [
     [22, 10, 2, 3, 7],
     [14, 7, 10, 0, 8],
     [-1, 13, -1, -11, 3],
@@ -54,9 +54,8 @@ const a = [
     [4, 5, 0, -2, 2]
 ]
 
-// const { u, v, q } = SVDJS.SVD(a)
-// console.log(u)
-// console.log(v)
-// console.log(q)
-// const {v} = SVDJS.SVD(a);
-// console.log(v)
+
+re = new RecommenderGame(a);
+console.log(re.table)
+console.log(re.normalizedMatrix);
+console.log(re.reducedMatrix);
