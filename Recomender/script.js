@@ -1,5 +1,5 @@
 class RecommenderGame {
-  table = [[]];
+  table = [[[]]];
   finalPoints = [[0, 0]]
 
   RecommenderGame() {
@@ -10,8 +10,8 @@ class RecommenderGame {
 
   }
 
-  setTableCellValue(row, column, newValue) {
-    this.table[row][column] = newValue;
+  setTableCellValue(row, column, depth, newValue) {
+    this.table[row][column][depth] = newValue;
   }
 }
 
