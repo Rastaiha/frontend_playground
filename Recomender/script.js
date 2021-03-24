@@ -1,18 +1,25 @@
 class RecommenderGame {
-  table = [[[]]];
+  table = [[]];
   finalPoints = [[0, 0]]
+  normalizedMatrix = [[]]
 
   RecommenderGame() {
     this._initializeTable();
   }
 
   _initializeTable() {
-
+    //todo
   }
 
-  setTableCellValue(row, column, depth, newValue) {
-    this.table[row][column][depth] = newValue;
+  setTableCellValue(row, column, newValue) {
+    this.table[row][column] = newValue;
   }
+
+  normalizeMatrix(){
+    const {this:normalizedMatrix = u} = SVDJS.SVD(this.table);
+  }
+
+
 }
 
 
