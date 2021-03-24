@@ -11,7 +11,7 @@ class RecommenderGame {
   }
 
   setTableCellValue(row, column, newValue) {
-
+    this.table[row][column] = newValue;
   }
 }
 

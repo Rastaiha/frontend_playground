@@ -257,5 +257,9 @@ const _getRandomSubset = (size, list) => {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // your playground starts here:
 
+alert("dsfsfa");
+
 const society = new Society();
 console.log(society);
+abol = new Person(5, true, 1);
+
