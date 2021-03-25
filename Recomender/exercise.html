@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>mds - js</title>
+    <meta charset="utf-8">
+    <script src="mdsjs.js" charset="utf-8"></script>
+</head>
+<body onload="start()">
+<p style="float: right;">
+    <canvas id="canvas" width="400" height="400" style="width: 400px; height: 400px"></canvas>
+</p>
+<p>
+    <a href="javascript:start()">recompute</a>
+</p>
+<p>
+<p>Computing: <span id="mode"></span></p>
+Input:
+<pre id="matrix" style="height: 200px; overflow: auto;"></pre>
+Output:
+<pre id="output" style="height: 200px; overflow: auto;"></pre>
+</p>
+<script type="text/javascript">
+
+    function start() {
+        computeMDS();
+    }
+
+    function computeMDS() {
+        var a = mdsjs.convertToMatrix([
+            [0, 2, 2, 4, 6, 6, 4, 6, 6],
+            [2, 0, 2, 2, 3, 4, 2, 3, 4],
+            [2, 2, 0, 4, 4, 6, 4, 4, 6],
+            [4, 2, 4, 0, 1, 1, 4, 6, 6],
+            [6, 3, 4, 1, 0, 1, 2, 3, 4],
+            [6, 4, 6, 1, 1, 0, 4, 4, 6],
+            [4, 2, 4, 4, 2, 4, 0, 1, 1],
+            [6, 3, 4, 6, 3, 4, 1, 0, 1],
+            [6, 4, 6, 6, 4, 6, 1, 1, 0]
+        ], true);
+        mdsjs.landmarkMDSAsync(a, 2, function (points) {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            ctx.clearRect(0, 0, 400, 400);
+            ctx.beginPath();
+            ctx.rect(0, 0, 400, 400);
+            ctx.stroke();
+            points.rowsIter(function (row) {
+                var x = row[0] * 50 + 200;
+                var y = row[1] * 50 + 200;
+                ctx.fillRect(x - 2, y - 2, 4, 4);
+            });
+            document.getElementById("mode").innerText = "mds";
+            document.getElementById("output").innerText = "" + points;
+            document.getElementById("matrix").innerText = "" + a;
+        });
+    }
+
+</script>
+</body>
+</html>
